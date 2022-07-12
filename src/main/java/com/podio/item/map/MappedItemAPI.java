@@ -23,7 +23,7 @@ public class MappedItemAPI<T> {
 		this.map = ItemMap.get(application, cls);
 	}
 
-	public int insert(T object, boolean silent) {
+	public long insert(T object, boolean silent) {
 		return factory.getAPI(ItemAPI.class).addItem(application.getId(),
 				map.getCreate(object), silent);
 	}

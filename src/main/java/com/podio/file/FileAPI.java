@@ -37,7 +37,7 @@ public class FileAPI extends BaseAPI {
 	 * @throws IOException
 	 *             If there was an error reading or writing the file
 	 */
-	public void downloadFile(int fileId, java.io.File target, FileSize size)
+	public void downloadFile(long fileId, java.io.File target, FileSize size)
 			throws IOException {
 		WebResource builder = getResourceFactory()
 				.getFileResource("/" + fileId);
@@ -112,7 +112,7 @@ public class FileAPI extends BaseAPI {
 	/**
 	 * Returns the file with the given id
 	 */
-	public File getFile(int fileId) {
+	public File getFile(long fileId) {
 		return getResourceFactory().getApiResource("/file/" + fileId).get(
 				File.class);
 	}
@@ -120,7 +120,7 @@ public class FileAPI extends BaseAPI {
 	/**
 	 * Used to update the description of the file.
 	 */
-	public void updateFile(int fileId, FileUpdate update) {
+	public void updateFile(long fileId, FileUpdate update) {
 		getResourceFactory().getApiResource("/file/" + fileId)
 				.entity(update, MediaType.APPLICATION_JSON_TYPE).put();
 	}

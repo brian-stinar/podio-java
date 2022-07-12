@@ -4,13 +4,13 @@ public class Reference {
 
 	private ReferenceType type;
 
-	private int id;
+	private long id;
 
 	public Reference() {
 		super();
 	}
 
-	public Reference(ReferenceType type, int id) {
+	public Reference(ReferenceType type, long id) {
 		super();
 		this.type = type;
 		this.id = id;
@@ -41,7 +41,7 @@ public class Reference {
 		this.type = type;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

@@ -125,7 +125,7 @@ public class AppAPI extends BaseAPI {
 	 * @param configuration
 	 *            The new configuration of the field
 	 */
-	public void updateField(int appId, int fieldId,
+	public void updateField(long appId, long fieldId,
 			ApplicationFieldConfiguration configuration) {
 		getResourceFactory()
 				.getApiResource("/app/" + appId + "/field/" + fieldId)
@@ -141,7 +141,7 @@ public class AppAPI extends BaseAPI {
 	 *            The id of the field to be returned
 	 * @return The definition and current configuration of the requested field
 	 */
-	public ApplicationField getField(int appId, int fieldId) {
+	public ApplicationField getField(long appId, long fieldId) {
 		return getResourceFactory().getApiResource(
 				"/app/" + appId + "/field/" + fieldId).get(
 				ApplicationField.class);
@@ -156,7 +156,7 @@ public class AppAPI extends BaseAPI {
 	 *            The id of the field to be returned
 	 * @return The definition and current configuration of the requested field
 	 */
-	public ApplicationField getField(int appId, String externalId) {
+	public ApplicationField getField(long appId, String externalId) {
 		return getResourceFactory().getApiResource(
 				"/app/" + appId + "/field/" + externalId).get(
 				ApplicationField.class);
@@ -172,7 +172,7 @@ public class AppAPI extends BaseAPI {
 	 * @param fieldId
 	 *            The id of the field that should be deleted
 	 */
-	public void deleteField(int appId, int fieldId) {
+	public void deleteField(long appId, long fieldId) {
 		getResourceFactory().getApiResource(
 				"/app/" + appId + "/field/" + fieldId).delete();
 	}
@@ -186,7 +186,7 @@ public class AppAPI extends BaseAPI {
 	 *            The id of the space the app should be installed o n
 	 * @return The id of the newly installed app
 	 */
-	public int install(int appId, int spaceId) {
+	public int install(long appId, long spaceId) {
 		return getResourceFactory()
 				.getApiResource("/app/" + appId + "/install")
 				.entity(new ApplicationInstall(spaceId),

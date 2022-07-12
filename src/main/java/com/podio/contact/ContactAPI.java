@@ -86,7 +86,7 @@ public class ContactAPI extends BaseAPI {
 	 *            The profile id of the user
 	 * @return The contact profile
 	 */
-	public Profile getContact(int profileId) {
+	public Profile getContact(long profileId) {
 		return getResourceFactory().getApiResource("/contact/" + profileId + "/v2").get(
 				Profile.class);
 	}

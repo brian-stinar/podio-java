@@ -42,7 +42,7 @@ public class ItemAPI extends BaseAPI {
 	 *            True if the create should be silten, false otherwise
 	 * @return The id of the newly created item
 	 */
-	public int addItem(int appId, ItemCreate create, boolean silent) {
+	public long addItem(int appId, ItemCreate create, boolean silent) {
 		return getResourceFactory().getApiResource("/item/app/" + appId + "/")
 				.queryParam("silent", silent ? "1" : "0")
 				.entity(create, MediaType.APPLICATION_JSON_TYPE)
@@ -56,8 +56,11 @@ public class ItemAPI extends BaseAPI {
 	 *            The id of the item
 	 * @return The item with given id
 	 */
-	public Item getItem(int itemId) {
-		return getResourceFactory().getApiResource("/item/" + itemId).get(
+	public Item getItem(long itemId) {
+        System.out.println("inside getItem long 5");
+        String path = "/item/" + String.valueOf(itemId);
+        System.out.println("Attempting to getItem with path " + path);
+		return getResourceFactory().getApiResource(path).get(
 				Item.class);
 	}
 
@@ -75,7 +78,7 @@ public class ItemAPI extends BaseAPI {
 	 * @param hook
 	 *            True if hooks should be executed for the change, false otherwise
 	 */
-	public void updateItem(int itemId, ItemUpdate update, boolean silent, boolean hook) {
+	public void updateItem(long itemId, ItemUpdate update, boolean silent, boolean hook) {
 		getResourceFactory().getApiResource("/item/" + itemId)
 				.queryParam("silent", silent ? "1" : "0")
 				.queryParam("hook", hook ? "1" : "0")
@@ -94,7 +97,7 @@ public class ItemAPI extends BaseAPI {
 	 * @param hook
 	 *            True if hooks should be executed for the change, false otherwise
 	 */
-	public void updateItemValues(int itemId, List<FieldValuesUpdate> values,
+	public void updateItemValues(long itemId, List<FieldValuesUpdate> values,
 			boolean silent, boolean hook) {
 		getResourceFactory().getApiResource("/item/" + itemId + "/value/")
 				.queryParam("silent", silent ? "1" : "0")
@@ -116,7 +119,7 @@ public class ItemAPI extends BaseAPI {
 	 * @param hook
 	 *            True if hooks should be executed for the change, false otherwise
 	 */
-	public void updateItemFieldValues(int itemId, int fieldId,
+	public void updateItemFieldValues(long itemId, int fieldId,
 			List<Map<String, Object>> values, boolean silent, boolean hook) {
 		getResourceFactory()
 				.getApiResource("/item/" + itemId + "/value/" + fieldId)
@@ -134,7 +137,7 @@ public class ItemAPI extends BaseAPI {
 	 * @param silent
 	 *            True if the deletion should be silent, false otherwise
 	 */
-	public void deleteItem(int itemId, boolean silent) {
+	public void deleteItem(long itemId, boolean silent) {
 		getResourceFactory().getApiResource("/item/" + itemId)
 				.queryParam("silent", silent ? "1" : "0").delete();
 	}
@@ -148,7 +151,7 @@ public class ItemAPI extends BaseAPI {
 	 *            The id of the field
 	 * @return The values on the field on the item
 	 */
-	public List<Map<String, Object>> getItemFieldValues(int itemId, int fieldId) {
+	public List<Map<String, Object>> getItemFieldValues(long itemId, long fieldId) {
 		return getResourceFactory().getApiResource(
 				"/item/" + itemId + "/value/" + fieldId).get(
 				new GenericType<List<Map<String, Object>>>() {
@@ -163,7 +166,7 @@ public class ItemAPI extends BaseAPI {
 	 *            The id of the item
 	 * @return The values on the item
 	 */
-	public List<FieldValuesView> getItemValues(int itemId) {
+	public List<FieldValuesView> getItemValues(long itemId) {
 		return getResourceFactory().getApiResource(
 				"/item/" + itemId + "/value/").get(
 				new GenericType<List<FieldValuesView>>() {
@@ -210,7 +213,7 @@ public class ItemAPI extends BaseAPI {
 	 *            The id of the item
 	 * @return The references to the given item
 	 */
-	public List<ItemReference> getItemReference(int itemId) {
+	public List<ItemReference> getItemReference(long itemId) {
 		return getResourceFactory().getApiResource(
 				"/item/" + itemId + "/reference/").get(
 				new GenericType<List<ItemReference>>() {
@@ -227,7 +230,7 @@ public class ItemAPI extends BaseAPI {
 	 *            revision
 	 * @return The revision
 	 */
-	public ItemRevision getItemRevision(int itemId, int revisionId) {
+	public ItemRevision getItemRevision(long itemId, long revisionId) {
 		return getResourceFactory().getApiResource(
 				"/item/" + itemId + "/revision/" + revisionId).get(
 				ItemRevision.class);
@@ -244,7 +247,7 @@ public class ItemAPI extends BaseAPI {
 	 *            The to revision
 	 * @return The difference between the two revision
 	 */
-	public List<ItemFieldDifference> getItemRevisionDifference(int itemId,
+	public List<ItemFieldDifference> getItemRevisionDifference(long itemId,
 			int revisionFrom, int revisionTo) {
 		return getResourceFactory().getApiResource(
 				"/item/" + itemId + "/revision/" + revisionFrom + "/"
@@ -260,7 +263,7 @@ public class ItemAPI extends BaseAPI {
 	 *            The id of the item
 	 * @return All the revisions
 	 */
-	public List<ItemRevision> getItemRevisions(int itemId) {
+	public List<ItemRevision> getItemRevisions(long itemId) {
 		return getResourceFactory().getApiResource(
 				"/item/" + itemId + "/revision/").get(
 				new GenericType<List<ItemRevision>>() {

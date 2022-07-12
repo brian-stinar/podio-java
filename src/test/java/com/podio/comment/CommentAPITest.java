@@ -58,7 +58,7 @@ public class CommentAPITest {
 
 	@Test
 	public void addComment() {
-		int commentId = getAPI().addComment(
+		long commentId = getAPI().addComment(
 				new Reference(ReferenceType.ITEM, 1),
 				new CommentCreate("Testing"), false, false);
 

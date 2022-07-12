@@ -16,11 +16,6 @@
 	<description>The official Java wrapper for the Podio API</description>
 	<url>http://podio.com</url>
 
-	<scm>
-		<connection>scm:git:git@github.com:podio/podio-java.git</connection>
-		<developerConnection>scm:git:git@github.com:podio/podio-java.git</developerConnection>
-		<url>git@github.com:podio/podio-java.git</url>
-	</scm>
 	<build>
 		<plugins>
 			<plugin>

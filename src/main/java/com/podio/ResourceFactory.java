@@ -91,6 +91,8 @@ public final class ResourceFactory {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.disable(Feature.FAIL_ON_UNKNOWN_PROPERTIES);
 		mapper.disable(SerializationConfig.Feature.FAIL_ON_EMPTY_BEANS);
+        mapper.enable(Feature.USE_BIG_INTEGER_FOR_INTS);
+
 		mapper.setSerializationInclusion(Inclusion.NON_NULL);
 
 		CustomSerializerFactory serializerFactory = new CustomSerializerFactory();
