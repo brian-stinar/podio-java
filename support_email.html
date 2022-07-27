@@ -1,0 +1,710 @@
+Original Message
+Message ID	<_TPt7000000000000000000000000000000000000000000000RFOLLX005QoPwgYSTYOcuReHgulWvw@sfdc.net>
+Created at:	Wed, Jul 27, 2022 at 7:32 AM (Delivered after 1 second)
+From:	Citrix Support <technicalsupport@citrix.com>
+To:	"brian@noventum.us" <brian@noventum.us>
+Subject:	Re: Citrix Podio Support - Hello! Did you recently extend your itemIDs past the bounds of an integer? My application is now having trouble, and I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHkuX:ref ]
+SPF:	PASS with IP 13.110.78.206 Learn more
+DKIM:	'PASS' with domain citrix.com Learn more
+DMARC:	'PASS' Learn more
+
+
+Download Original	Copy to clipboard	
+Delivered-To: brian@noventum.us
+Received: by 2002:a17:902:f685:b0:16d:3119:7ff2 with SMTP id l5csp563743plg;
+        Wed, 27 Jul 2022 06:32:28 -0700 (PDT)
+X-Google-Smtp-Source: AGRyM1tlCvghU+9FXWm6lqOnPeKk8IR1o7+HXmXi/XNz7nTDwkU3izuEv7p1ZQtAh5vOPA3u0tBj
+X-Received: by 2002:a05:620a:ecc:b0:6b5:c02a:e32c with SMTP id x12-20020a05620a0ecc00b006b5c02ae32cmr16423449qkm.295.1658928748286;
+        Wed, 27 Jul 2022 06:32:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1658928748; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RMH5L1qWE0+C3F2bEMQPfUOCdirsudLmvwJHCx3FQRgEyTrnkP3j6ol/8Vp7r7tpVg
+         AKPkYaUX8SIa7VUOnlYsSvMbV+99QFl9/SWrOpOG3/SdGsXCJD/37KVFXbV1zn7HXjT4
+         0b1dGDGBpbf79Wc5jRRuA0AvVooLrqYPpKwM7RwMU+PGouylndNp+pAXGvQgm6mEOUjG
+         70+qaqnUG8s7qwodkOyIOpD2Xz/KmMptZ1eJwMM0/A1e6qxSNG5bXTff0MHUwjkthHMe
+         OYn0IopUs0P5vk80/saxcd5+RhxCY9FtRf+9TFV0ZhPImiM35GhoSCmIO4TBEAB2DIYN
+         OZFQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:references:in-reply-to:message-id:cc:to:from
+         :date:dkim-signature;
+        bh=33PtPohn+o6w87we2JcAjpO3hszuKojuYJrtPARPTHI=;
+        b=U/dwD1axrKEUHSCxXYib1wd+0ughWHJjlAsIoOYSXWgmDNzlVbZ8lGy+bk1Ca/ggou
+         temr2ySXrdi+cIi/RO+Vm4cV/LlDaR0J/yJ1JLiNkgxdbqsYbOgGD2mM5Ai4EDhvMK7D
+         jNPktVeivCJIKumVuYp+rRbiJyiZwm2w4yMSD3+v6yn9Dfm3AiSTh01M6mgcvOgeZMGX
+         clytYjqeBsOFcxPjoMoIpJ3XPpDUFznPWA+QZXax3mRnTTyxA0+oeKZtONWIpdb5iali
+         P2ubft/UIQxKOmjhQPX4hWKMBR1hek5tt4d8/qHo92Ya+QZlCj+ZYdDNfaZ4f725h23A
+         ifiA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@citrix.com header.s=citrix-prod header.b=AJiYDMAS;
+       spf=pass (google.com: domain of technicalsupport@citrix.com designates 13.110.78.206 as permitted sender) smtp.mailfrom=technicalsupport@citrix.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=citrix.com
+Return-Path: <technicalsupport@citrix.com>
+Received: from smtp15-ia5-sp3.mta.salesforce.com (smtp15-ia5-sp3.mta.salesforce.com. [13.110.78.206])
+        by mx.google.com with ESMTPS id x4-20020a05620a448400b006a6d365e9a9si13797588qkp.715.2022.07.27.06.32.27
+        for <brian@noventum.us>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 27 Jul 2022 06:32:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of technicalsupport@citrix.com designates 13.110.78.206 as permitted sender) client-ip=13.110.78.206;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@citrix.com header.s=citrix-prod header.b=AJiYDMAS;
+       spf=pass (google.com: domain of technicalsupport@citrix.com designates 13.110.78.206 as permitted sender) smtp.mailfrom=technicalsupport@citrix.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=citrix.com
+Return-Path: <technicalsupport@citrix.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=citrix.com; s=citrix-prod; t=1658928747; bh=Ake/IFXv5y5kkNjbYoAmNC3BLL1Dbj2c/elSZMV8VZE=; h=Date:From:To:Subject:MIME-Version:Content-Type; b=AJiYDMASse15jUYjrQ9MbB3wdbefBb6J5qBVzTdR+CAmSRMXt98F4w8KM9a+Ob9SE
+	 76Q8TlZfgu1B7EKBKgTuYjaTcEfxSahgpDpepwIXmiZ3jZcgoB193FQCLWSv9wOjEq
+	 481cQUBor1HhRGbg/ax8K4yyls1YQ7HtvGvV+I3Y=
+Authentication-Results: mx3-ia5-sp3.mta.salesforce.com x-tls.subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia5;2:ia5-sp3;3:na152;4:prod/CN=na152-app1-43-ia5.ops.sfdc.net"; auth=pass (cipher=ECDHE-RSA-AES256-GCM-SHA384)
+Received: from [10.182.207.58] ([10.182.207.58:52510] helo=na152-app1-43-ia5.ops.sfdc.net) by mx3-ia5-sp3.mta.salesforce.com (envelope-from <technicalsupport@citrix.com>) (ecelerity 4.2.38.62368 r(Core:release/4.2.38.0)) with ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384 subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia5;2:ia5-sp3;3:na152;4:prod/CN=na152-app1-43-ia5.ops.sfdc.net") id 74/3A-06760-B6E31E26; Wed, 27 Jul 2022 13:32:27 +0000
+Date: Wed, 27 Jul 2022 13:32:27 +0000 (GMT)
+From: Citrix Support <technicalsupport@citrix.com>
+To: "brian@noventum.us" <brian@noventum.us>
+Cc: "tech@geekswhodrink.com" <tech@geekswhodrink.com>
+Message-ID: <_TPt7000000000000000000000000000000000000000000000RFOLLX005QoPwgYSTYOcuReHgulWvw@sfdc.net>
+In-Reply-To: <CACx-rTo2pfyx78drfscMS9gGc4g0wziXdbQL9cq2TG0r6h6fTg@mail.gmail.com>
+References: <hmZZB000000000000000000000000000000000000000000000REKFLO00qRXPnX-UTJakQ22nvKHmuQ@sfdc.net> <ZploO000000000000000000000000000000000000000000000REKI0W00_XFubcjXQXacPjQaartKnw@sfdc.net> <CACx-rTojAL6wr7-6YPiS+z1oEtmvZ0ZMRPq7cqKMzbxhFXRXyA@mail.gmail.com> <w18MM000000000000000000000000000000000000000000000REKINY00DfbfVdDhRzSHbFuq_oP-FA@sfdc.net> <CACx-rTr2rU9bQn+b2p3nX466FmgE4wN7F2_6YT6fp4J_yZszew@mail.gmail.com> <eZKd-000000000000000000000000000000000000000000000RELSH600eKfIHsCdRA6VeddQEPZbAw@sfdc.net> <CACx-rTon1p-tSxBBmJao1cLanEF=A3bzN+E=QuoptOKRpwFGJA@mail.gmail.com> <qNAjE000000000000000000000000000000000000000000000RELX2200FIVItE81T5KHuZFvbw-fNA@sfdc.net> <CACx-rTpmVEE8d=jOgf4ZqjYxe4Y1ATC_q+Kq6c9sPUVRfiMqaA@mail.gmail.com> <CACx-rTrj=FsVJ-QjoQUq36r25Q8zFWzFR8UHj84W+-=7RqKmQw@mail.gmail.com> <CACx-rTrD1ajj4UzRWCo=zB66Gd_oDXS0eH5bvKo3p2vmgmDefQ@mail.gmail.com> <CACx-rTo2pfyx78drfscMS9gGc4g0wziXdbQL9cq2TG0r6h6fTg@mail.gmail.com>
+Subject: Re: Citrix Podio Support - Hello! Did you recently extend your itemIDs past the bounds of an integer? My application is now having trouble, and I think that is why. Case Number 81286161 -
+    [ ref:_00D306M9V._5004z1fHkuX:ref ]
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Part_22550_1350897771.1658928747818"
+X-SFDC-LK: 00D300000006M9V
+X-SFDC-User: 00560000005BABp
+X-Sender: postmaster@salesforce.com
+X-mail_abuse_inquiries: http://www.salesforce.com/company/abuse.jsp
+X-SFDC-TLS-NoRelay: 1
+X-SFDCOrgRelay: 00D300000006M9V
+X-SFDC-Binding: 1WrIRBV94myi25uB
+X-SFDC-EmailCategory: quickActionEmail
+X-SFDC-EntityId: 5004z00001fHkuX
+X-SFDC-Interface: internal
+
+------=_Part_22550_1350897771.1658928747818
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Hi Brian,
+
+I don't have an update yet but I'll bring this up tomorrow when I meet with=
+ the team.
+
+Kelley Markoff
+Sr. Technical Support Engineer
+Podio
+Raleigh, NC - USA
+
+https://support.citrix.com
+
+
+
+--------------- Original Message ---------------
+From: Brian Stinar [brian@noventum.us]
+Sent: 7/13/2022 6:52 PM
+To: technicalsupport@citrix.com
+Cc: tech@geekswhodrink.com
+Subject: Re: Citrix Podio Support - Hello! Did you recently extend your ite=
+mIDs past the bounds of an integer? My application is now having trouble, a=
+nd I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHku=
+X:ref ]
+
+[CAUTION - EXTERNAL EMAIL] DO NOT reply, click links, or open attachments u=
+nless you have verified the sender and know the content is safe.
+
+Hello Kelly,
+It's been about a week, and I haven't heard anything. What's going on withi=
+n Podio/Citrix?
+Thanks,
+
+-Brian J. Stinar-
+Noventum Custom Software
+?505-309-0692?
+On Mon, Jul 11, 2022 at 3:57 PM Brian Stinar <brian@noventum.us> wrote:
+Hello,
+Do you have any update related to our issue, or to POD-2974? What's going o=
+n from the Podio perspective regarding this?
+Thanks,
+
+-Brian J. Stinar-
+Noventum Custom Software
+?505-309-0692?
+On Thu, Jul 7, 2022 at 6:53 PM Brian Stinar <brian@noventum.us> wrote:
+Hello,
+Any update? We're attempting to patch that old library, but not making as m=
+uch progress as we'd like. Do you have anyone at Podio that built that libr=
+ary from source?
+Thanks,
+
+-Brian J. Stinar-
+Noventum Custom Software
+?505-309-0692?
+On Wed, Jul 6, 2022 at 4:37 PM Brian Stinar <brian@noventum.us> wrote:
+Hello Kelly,
+Thank you very much. Do you have any update? We are unable to process any n=
+ew Podio entities until this is resolved, which effectively makes our appli=
+cation useless for new data.
+What is the plan on the Podio side?
+Thanks,
+-Brian J. Stinar-
+Noventum Custom Software
+?505-309-0692?
+On Wed, Jul 6, 2022 at 10:13 AM Citrix Support <technicalsupport@citrix.com=
+> wrote:
+Hi there!
+
+Great to hear from you guys but I apologize for the reason for it!
+
+I've taken over this bug and I'll be providing you with any updates I get f=
+rom our developers. We've raised this issue as it's quite a big issue and w=
+e should be hearing some type of update soon. I'll keep you posted.
+
+Kelley Markoff
+Sr. Technical Support Engineer
+Podio
+Raleigh, NC - USA
+
+https://support.citrix.com
+
+
+
+--------------- Original Message ---------------
+From: Brian Stinar [brian@noventum.us]
+Sent: 7/6/2022 11:29 AM
+To: technicalsupport@citrix.com
+Cc: tech@geekswhodrink.com
+Subject: Re: Citrix Podio Support - Hello! Did you recently extend your ite=
+mIDs past the bounds of an integer? My application is now having trouble, a=
+nd I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHku=
+X:ref ]
+
+[CAUTION - EXTERNAL EMAIL] DO NOT reply, click links, or open attachments u=
+nless you have verified the sender and know the content is safe.
+
+Hello,
+Thank you. We are working on patching your Java Podio library, and incorpor=
+ating this patched version into our application, but would prefer not to go=
+ down this path.
+Thanks,
+-Brian J. Stinar-
+On Jul 6, 2022 8:34 AM, "Citrix Support" <technicalsupport@citrix.com> wrot=
+e:
+Hi Brian,
+
+Please note that we escalated this issue to our engineering team, we'll kee=
+p you posted.
+
+
+Best Regards,
+Danny Arias
+Associate Technical Support Engineer
+Podio Support
+Building E21 =96 AFZ, Heredia, Costa Rica
+T +1 954-267-3000
+F +1 800-424-8749
+citrix
+www.citrix.com
+Citrix new brand (Laptops)
+This e-mail message and all documents that accompany it may contain privile=
+ged or confidential information, and are intended only for the use of the i=
+ndividual or entity to which addressed. Any unauthorized disclosure or dist=
+ribution of this e-mail message is prohibited. If you have received this e-=
+mail message in error, please notify me immediately. Thank you.
+
+
+--------------- Original Message ---------------
+From: Brian Stinar [brian@noventum.us]
+Sent: 7/5/2022 6:14 PM
+To: technicalsupport@citrix.com
+Cc: tech@geekswhodrink.com
+Subject: Re: Citrix Podio Support - Hello! Did you recently extend your ite=
+mIDs past the bounds of an integer? My application is now having trouble, a=
+nd I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHku=
+X:ref ]
+
+[CAUTION - EXTERNAL EMAIL] DO NOT reply, click links, or open attachments u=
+nless you have verified the sender and know the content is safe.
+
+Hello,
+Thank you. We are trying to restructure our application to take longs inste=
+ad of ints, but the underlying Podio library seems to have ints baked in as=
+ well:
+https://github.com/podio/podio-java
+.
+.
+.
+
+podio-java/src/main/java/com/podio/item/ItemAPI.java:
+
+public Item getItem(int itemId) {
+
+return getResourceFactory().getApiResource("/item/" + itemId).get(
+
+Item.class);
+
+}
+
+If you could say "For you the PodioIDs won't exceed the maximum value of an=
+ integer for six months" and make it happen, I would be happy.
+Thanks,
+
+-Brian J. Stinar-
+Noventum Custom Software
+?505-309-0692?
+On Tue, Jul 5, 2022 at 4:04 PM Citrix Support <technicalsupport@citrix.com>=
+ wrote:
+Hi Brian,
+
+I hope this email finds you well, I am currently consulting this with our u=
+pper level team, I'll keep you posted.
+
+Best Regards,
+Danny Arias
+Associate Technical Support Engineer
+Podio Support
+Building E21 =96 AFZ, Heredia, Costa Rica
+T +1 954-267-3000
+F +1 800-424-8749
+citrix
+www.citrix.com
+Citrix new brand (Laptops)
+This e-mail message and all documents that accompany it may contain privile=
+ged or confidential information, and are intended only for the use of the i=
+ndividual or entity to which addressed. Any unauthorized disclosure or dist=
+ribution of this e-mail message is prohibited. If you have received this e-=
+mail message in error, please notify me immediately. Thank you.
+
+
+--------------- Original Message ---------------
+From: Brian Stinar [brian@noventum.us]
+Sent: 7/5/2022 5:55 PM
+To: technicalsupport@citrix.com
+Cc: tech@geekswhodrink.com
+Subject: Re: Citrix Podio Support - Hello! Did you recently extend your ite=
+mIDs past the bounds of an integer? My application is now having trouble, a=
+nd I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHku=
+X:ref ]
+
+[CAUTION - EXTERNAL EMAIL] DO NOT reply, click links, or open attachments u=
+nless you have verified the sender and know the content is safe.
+
+Hello,
+
+Yes, our application is dying because it cannot convert the Podio ID
+values into an integer. For example:
+2152770527
+2152770968
+2152768615
+
+Are all overflowing the int maximum of 2147483648 in our application,
+item =3D podioService.getPodioEmployeeItem(itemId.toInteger());
+
+Since it looks like Podio crossed the int-id boundary on June 29.
+
+So, we are unable to process new items in Podio because of this with
+our application. Does this make sense?
+
+Thanks,
+
+-Brian J. Stinar-
+Noventum Custom Software
+?505-309-0692?
+
+On Tue, Jul 5, 2022 at 3:51 PM 'Citrix Support' via Tech Channel
+<tech@geekswhodrink.com> wrote:
+>
+> Hello Brian,
+>
+> Thank you for contacting Podio support, I hope your day is treating you w=
+ell!
+>
+> We apologize for the inconvenience you are experiencing. I will be happy =
+to review this further for you. Please provide more details, is it giving y=
+ou an error message?.
+>
+> Please feel free to let me know if you have any further questions, I am l=
+ooking forward to hear back from you soon.
+>
+> Best Regards,
+> Danny Arias
+> Associate Technical Support Engineer
+> Podio Support
+> Building E21 =96 AFZ, Heredia, Costa Rica
+> T +1 954-267-3000
+> F +1 800-424-8749
+> citrix
+> www.citrix.com
+> Citrix new brand (Laptops)
+> This e-mail message and all documents that accompany it may contain privi=
+leged or confidential information, and are intended only for the use of the=
+ individual or entity to which addressed. Any unauthorized disclosure or di=
+stribution of this e-mail message is prohibited. If you have received this =
+e-mail message in error, please notify me immediately. Thank you.
+>
+>
+> ref:_00D306M9V._5004z1fHkuX:ref
+
+------=_Part_22550_1350897771.1658928747818
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>Hi Brian,<br />
+<br />
+I don&#39;t have an update yet but I&#39;ll bring this up tomorrow when I meet with the team.&nbsp;<br />
+<br />
+Kelley Markoff<br />
+Sr. Technical Support Engineer<br />
+Podio<br />
+Raleigh, NC - USA<br />
+<a href="https://www.citrix.com/"><img src="https://citrite.my.salesforce.com/servlet/servlet.ImageServer?id=0154z000001zEcR&oid=00D300000006M9V" /> </a><br />
+https://support.citrix.com<br />
+<a href="https://training.citrix.com/learning/training/cloud-learning-series?utm_campaign=GS-0321-TG-SalesInquiry-CloudLearningSeries&utm_medium=Display+-+Banner+Ad&utm_source=SupportSignatures&ctm_programid=GS-0321-TG-SalesInquiry-CloudLearningSeries"><img src="https://citrite.my.salesforce.com/servlet/servlet.ImageServer?id=0154z000001zEcM&oid=00D300000006M9V" /> </a><br clear="none" />
+<br clear="none" />
+<br clear="none" />
+--------------- Original Message ---------------<br clear="none" />
+<b>From:</b> Brian Stinar [brian@noventum.us]<br clear="none" />
+<b>Sent:</b> 7/13/2022 6:52 PM<br clear="none" />
+<b>To:</b> technicalsupport@citrix.com<br clear="none" />
+<b>Cc:</b> tech@geekswhodrink.com<br clear="none" />
+<b>Subject:</b> Re: Citrix Podio Support - Hello! Did you recently extend your itemIDs past the bounds of an integer? My application is now having trouble, and I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHkuX:ref ]<br clear="none" />
+&nbsp;
+<table style="background-color: #FED12E; margin-bottom:8px; width: 100%; text-align: center">
+	<tbody>
+		<tr>
+			<td colspan="1" rowspan="1" style="font-size: 12px;"><span style="font-size: 12px; font-family: Arial;">[CAUTION - EXTERNAL EMAIL] DO NOT reply, click links, or open attachments unless you have verified the sender and know the content is safe.</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<div dir="ltr">Hello Kelly,&nbsp;
+<div>&nbsp;</div>
+
+<div>It&#39;s been about a week, and I haven&#39;t heard anything. What&#39;s going on within Podio/Citrix?&nbsp;</div>
+
+<div>&nbsp;
+<div>
+<div class="gmail_signature" dir="ltr">
+<div dir="ltr">Thanks,<br clear="none" />
+<br clear="none" />
+&nbsp; &nbsp; -Brian J. Stinar-<br clear="none" />
+&nbsp; &nbsp; &nbsp;<a href="https://www.noventum.us/#portfolio" shape="rect" target="_blank">Noventum Custom Software</a><br clear="none" />
+&nbsp; &nbsp; &nbsp;?505-309-0692?</div>
+</div>
+</div>
+</div>
+</div>
+&nbsp;
+
+<div class="gmail_quote">
+<div class="gmail_attr" dir="ltr">On Mon, Jul 11, 2022 at 3:57 PM Brian Stinar &lt;<a href="mailto:brian@noventum.us" shape="rect" target="_blank">brian@noventum.us</a>&gt; wrote:</div>
+
+<blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div dir="ltr">Hello,
+<div>&nbsp;</div>
+
+<div>Do you have any update related to our issue, or to&nbsp;POD-2974? What&#39;s going on from the Podio perspective regarding this?</div>
+
+<div>&nbsp;
+<div>
+<div dir="ltr">
+<div dir="ltr">Thanks,<br clear="none" />
+<br clear="none" />
+&nbsp; &nbsp; -Brian J. Stinar-<br clear="none" />
+&nbsp; &nbsp; &nbsp;<a href="https://www.noventum.us/#portfolio" shape="rect" target="_blank">Noventum Custom Software</a><br clear="none" />
+&nbsp; &nbsp; &nbsp;?505-309-0692?</div>
+</div>
+</div>
+</div>
+</div>
+&nbsp;
+
+<div class="gmail_quote">
+<div class="gmail_attr" dir="ltr">On Thu, Jul 7, 2022 at 6:53 PM Brian Stinar &lt;<a href="mailto:brian@noventum.us" shape="rect" target="_blank">brian@noventum.us</a>&gt; wrote:</div>
+
+<blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div dir="ltr">Hello,
+<div>&nbsp;</div>
+
+<div>Any update? We&#39;re attempting to patch that old library, but not making as much progress as we&#39;d like. Do you have anyone at Podio that built that library from source?</div>
+
+<div>&nbsp;
+<div>
+<div dir="ltr">
+<div dir="ltr">Thanks,<br clear="none" />
+<br clear="none" />
+&nbsp; &nbsp; -Brian J. Stinar-<br clear="none" />
+&nbsp; &nbsp; &nbsp;<a href="https://www.noventum.us/#portfolio" shape="rect" target="_blank">Noventum Custom Software</a><br clear="none" />
+&nbsp; &nbsp; &nbsp;?505-309-0692?</div>
+</div>
+</div>
+</div>
+</div>
+&nbsp;
+
+<div class="gmail_quote">
+<div class="gmail_attr" dir="ltr">On Wed, Jul 6, 2022 at 4:37 PM Brian Stinar &lt;<a href="mailto:brian@noventum.us" shape="rect" target="_blank">brian@noventum.us</a>&gt; wrote:</div>
+
+<blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div dir="ltr">Hello Kelly,&nbsp;
+<div>&nbsp;</div>
+
+<div>Thank you very much. Do you have any update? We are unable to process any new Podio entities until this is resolved, which effectively makes our application useless for new data.</div>
+
+<div>&nbsp;</div>
+
+<div>What is the plan on the Podio side?</div>
+
+<div>&nbsp;</div>
+
+<div>Thanks,</div>
+
+<div>&nbsp;</div>
+
+<div>
+<div>
+<div dir="ltr">
+<div dir="ltr">&nbsp; &nbsp; -Brian J. Stinar-<br clear="none" />
+&nbsp; &nbsp; &nbsp;<a href="https://www.noventum.us/#portfolio" shape="rect" target="_blank">Noventum Custom Software</a><br clear="none" />
+&nbsp; &nbsp; &nbsp;?505-309-0692?</div>
+</div>
+</div>
+</div>
+</div>
+&nbsp;
+
+<div class="gmail_quote">
+<div class="gmail_attr" dir="ltr">On Wed, Jul 6, 2022 at 10:13 AM Citrix Support &lt;<a href="mailto:technicalsupport@citrix.com" shape="rect" target="_blank">technicalsupport@citrix.com</a>&gt; wrote:</div>
+
+<blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div>Hi there!<br clear="none" />
+<br clear="none" />
+Great to hear from you guys but I apologize for the reason for it!<br clear="none" />
+<br clear="none" />
+I&#39;ve taken over this bug and I&#39;ll be providing you with any updates I get from our developers. We&#39;ve raised this issue as it&#39;s quite a big issue and we should be hearing some type of update soon. I&#39;ll keep you posted.&nbsp;<br clear="none" />
+<br clear="none" />
+Kelley Markoff<br clear="none" />
+Sr. Technical Support Engineer<br clear="none" />
+Podio<br clear="none" />
+Raleigh, NC - USA<br clear="none" />
+<a href="https://www.citrix.com/" shape="rect" target="_blank"><img /> </a><br clear="none" />
+<a href="https://support.citrix.com" shape="rect" target="_blank">https://support.citrix.com</a><br clear="none" />
+<a href="https://training.citrix.com/learning/training/cloud-learning-series?utm_campaign=GS-0321-TG-SalesInquiry-CloudLearningSeries&utm_medium=Display+-+Banner+Ad&utm_source=SupportSignatures&ctm_programid=GS-0321-TG-SalesInquiry-CloudLearningSeries" shape="rect" target="_blank"><img /> </a><br clear="none" />
+<br clear="none" />
+<br clear="none" />
+--------------- Original Message ---------------<br clear="none" />
+<b>From:</b> Brian Stinar [<a href="mailto:brian@noventum.us" shape="rect" target="_blank">brian@noventum.us</a>]<br clear="none" />
+<b>Sent:</b> 7/6/2022 11:29 AM<br clear="none" />
+<b>To:</b> <a href="mailto:technicalsupport@citrix.com" shape="rect" target="_blank">technicalsupport@citrix.com</a><br clear="none" />
+<b>Cc:</b> <a href="mailto:tech@geekswhodrink.com" shape="rect" target="_blank">tech@geekswhodrink.com</a><br clear="none" />
+<b>Subject:</b> Re: Citrix Podio Support - Hello! Did you recently extend your itemIDs past the bounds of an integer? My application is now having trouble, and I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHkuX:ref ]<br clear="none" />
+&nbsp;
+<table style="background-color:rgb(254,209,46);margin-bottom:8px;width:100%;text-align:center">
+	<tbody>
+		<tr>
+			<td colspan="1" rowspan="1" style="font-size:12px"><span style="font-size:12px;font-family:Arial">[CAUTION - EXTERNAL EMAIL] DO NOT reply, click links, or open attachments unless you have verified the sender and know the content is safe.</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<div dir="auto">
+<div>Hello,
+<div dir="auto">&nbsp;</div>
+
+<div dir="auto">Thank you. We are working on patching your Java Podio library, and incorporating this patched version into our application, but would prefer not to go down this path.</div>
+
+<div dir="auto">&nbsp;</div>
+
+<div dir="auto">Thanks,</div>
+
+<div dir="auto">&nbsp;</div>
+
+<div dir="auto">&nbsp; &nbsp; &nbsp;-Brian J. Stinar-</div>
+&nbsp;
+
+<div class="gmail_extra">&nbsp;
+<div class="gmail_quote">On Jul 6, 2022 8:34 AM, &quot;Citrix Support&quot; &lt;<a href="mailto:technicalsupport@citrix.com" shape="rect" target="_blank">technicalsupport@citrix.com</a>&gt; wrote:
+
+<blockquote style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div>Hi Brian,<br clear="none" />
+<br clear="none" />
+Please note that we escalated this issue to our engineering team, we&#39;ll keep you posted.&nbsp;
+<div><br clear="none" />
+<br clear="none" />
+Best Regards,<br clear="none" />
+Danny Arias<br clear="none" />
+Associate Technical Support Engineer<br clear="none" />
+Podio Support<br clear="none" />
+Building E21 &ndash; AFZ, Heredia, Costa Rica<br clear="none" />
+T +1 954-267-3000<br clear="none" />
+F +1 800-424-8749<br clear="none" />
+citrix<br clear="none" />
+<a href="http://www.citrix.com" shape="rect" target="_blank">www.citrix.com</a><br clear="none" />
+Citrix new brand (Laptops)<br clear="none" />
+This e-mail message and all documents that accompany it may contain privileged or confidential information, and are intended only for the use of the individual or entity to which addressed. Any unauthorized disclosure or distribution of this e-mail message is prohibited. If you have received this e-mail message in error, please notify me immediately. Thank you.<br clear="none" />
+<br clear="none" />
+<br clear="none" />
+--------------- Original Message ---------------<br clear="none" />
+<b>From:</b> Brian Stinar [<a href="mailto:brian@noventum.us" shape="rect" target="_blank">brian@noventum.us</a>]<br clear="none" />
+<b>Sent:</b> 7/5/2022 6:14 PM<br clear="none" />
+<b>To:</b> <a href="mailto:technicalsupport@citrix.com" shape="rect" target="_blank">technicalsupport@citrix.com</a><br clear="none" />
+<b>Cc:</b> <a href="mailto:tech@geekswhodrink.com" shape="rect" target="_blank">tech@geekswhodrink.com</a><br clear="none" />
+<b>Subject:</b> Re: Citrix Podio Support - Hello! Did you recently extend your itemIDs past the bounds of an integer? My application is now having trouble, and I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHkuX:ref ]<br clear="none" />
+&nbsp;
+<table style="background-color:rgb(254,209,46);margin-bottom:8px;width:100%;text-align:center">
+	<tbody>
+		<tr>
+			<td colspan="1" rowspan="1" style="font-size:12px"><span style="font-size:12px;font-family:Arial">[CAUTION - EXTERNAL EMAIL] DO NOT reply, click links, or open attachments unless you have verified the sender and know the content is safe.</span></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div dir="ltr">Hello,
+<div>&nbsp;</div>
+
+<div>
+<div>Thank you. We are trying to restructure our application to take longs instead of ints, but the underlying Podio library seems to have ints baked in as well:&nbsp;</div>
+
+<div>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/podio/podio-java" shape="rect" target="_blank">https://github.com/podio/podio-java</a></div>
+
+<div>.</div>
+
+<div>.</div>
+
+<div>.</div>
+
+<div>
+<p style="margin:0px;font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,0,0)"><span style="font-variant-ligatures:no-common-ligatures">podio-java/src/main/java/com/podio/item/ItemAPI.java:</span></p>
+</div>
+
+<div>
+<p style="margin:0px;font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,0,0)"><span style="font-variant-ligatures:no-common-ligatures"><span>&nbsp; &nbsp;&nbsp;</span></span><span style="font-variant-ligatures:no-common-ligatures;color:rgb(47,180,29)">public</span><span style="font-variant-ligatures:no-common-ligatures"> Item getItem(</span><span style="font-variant-ligatures:no-common-ligatures;color:rgb(47,180,29)">int</span><span style="font-variant-ligatures:no-common-ligatures"> itemId) </span><span style="font-variant-ligatures:no-common-ligatures;background-color:rgb(29,226,223)">{</span></p>
+
+<p style="margin:0px;font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,0,0)"><span style="font-variant-ligatures:no-common-ligatures"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span></span><span style="font-variant-ligatures:no-common-ligatures;color:rgb(193,101,28)">return</span><span style="font-variant-ligatures:no-common-ligatures"> getResourceFactory().getApiResource(</span><span style="font-variant-ligatures:no-common-ligatures;color:rgb(180,36,25)">&quot;/item/&quot;</span><span style="font-variant-ligatures:no-common-ligatures"> + itemId).get(</span></p>
+
+<p style="margin:0px;font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,0,0)"><span style="font-variant-ligatures:no-common-ligatures"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>Item.</span><span style="font-variant-ligatures:no-common-ligatures;color:rgb(47,180,29)">class</span><span style="font-variant-ligatures:no-common-ligatures">);</span></p>
+
+<p style="margin:0px;font-variant-numeric:normal;font-variant-east-asian:normal;font-stretch:normal;font-size:11px;line-height:normal;font-family:Menlo;color:rgb(0,0,0)"><span style="font-variant-ligatures:no-common-ligatures"><span>&nbsp; &nbsp; </span></span><span style="font-variant-ligatures:no-common-ligatures;background-color:rgb(29,226,223)">}</span></p>
+</div>
+
+<div>&nbsp;</div>
+
+<div>If you could say &quot;For you the PodioIDs won&#39;t exceed the maximum value of an integer for six months&quot; and make it happen, I would be happy.</div>
+</div>
+
+<div>&nbsp;
+<div>
+<div dir="ltr">
+<div dir="ltr">
+<div>Thanks,<br clear="none" />
+<br clear="none" />
+&nbsp; &nbsp; -Brian J. Stinar-<br clear="none" />
+&nbsp; &nbsp; &nbsp;<a href="https://www.noventum.us/#portfolio" shape="rect" target="_blank">Noventum Custom Software</a></div>
+&nbsp; &nbsp; &nbsp;?505-309-0692?</div>
+</div>
+</div>
+</div>
+</div>
+
+<div>&nbsp;
+<div class="gmail_quote">
+<div class="gmail_attr" dir="ltr">On Tue, Jul 5, 2022 at 4:04 PM Citrix Support &lt;<a href="mailto:technicalsupport@citrix.com" shape="rect" target="_blank">technicalsupport@citrix.com</a>&gt; wrote:</div>
+
+<blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<div>Hi Brian,<br clear="none" />
+<br clear="none" />
+I hope this email finds you well, I am currently consulting this with our upper level team, I&#39;ll keep you posted.&nbsp;&nbsp;<br clear="none" />
+<br clear="none" />
+Best Regards,<br clear="none" />
+Danny Arias<br clear="none" />
+Associate Technical Support Engineer<br clear="none" />
+Podio Support<br clear="none" />
+Building E21 &ndash; AFZ, Heredia, Costa Rica<br clear="none" />
+T +1 954-267-3000<br clear="none" />
+F +1 800-424-8749<br clear="none" />
+citrix<br clear="none" />
+<a href="http://www.citrix.com" shape="rect" target="_blank">www.citrix.com</a><br clear="none" />
+Citrix new brand (Laptops)<br clear="none" />
+This e-mail message and all documents that accompany it may contain privileged or confidential information, and are intended only for the use of the individual or entity to which addressed. Any unauthorized disclosure or distribution of this e-mail message is prohibited. If you have received this e-mail message in error, please notify me immediately. Thank you.<br clear="none" />
+<br clear="none" />
+<br clear="none" />
+--------------- Original Message ---------------<br clear="none" />
+From: Brian Stinar [<a href="mailto:brian@noventum.us" shape="rect" target="_blank">brian@noventum.us</a>]<br clear="none" />
+Sent: 7/5/2022 5:55 PM<br clear="none" />
+To: <a href="mailto:technicalsupport@citrix.com" shape="rect" target="_blank">technicalsupport@citrix.com</a><br clear="none" />
+Cc: <a href="mailto:tech@geekswhodrink.com" shape="rect" target="_blank">tech@geekswhodrink.com</a><br clear="none" />
+Subject: Re: Citrix Podio Support - Hello! Did you recently extend your itemIDs past the bounds of an integer? My application is now having trouble, and I think that is why. Case Number 81286161 - [ ref:_00D306M9V._5004z1fHkuX:ref ]<br clear="none" />
+<br clear="none" />
+[CAUTION - EXTERNAL EMAIL] DO NOT reply, click links, or open attachments unless you have verified the sender and know the content is safe.<br clear="none" />
+<br clear="none" />
+Hello,<br clear="none" />
+<br clear="none" />
+Yes, our application is dying because it cannot convert the Podio ID<br clear="none" />
+values into an integer. For example:<br clear="none" />
+2152770527<br clear="none" />
+2152770968<br clear="none" />
+2152768615<br clear="none" />
+<br clear="none" />
+Are all overflowing the int maximum of 2147483648 in our application,<br clear="none" />
+item = podioService.getPodioEmployeeItem(itemId.toInteger());<br clear="none" />
+<br clear="none" />
+Since it looks like Podio crossed the int-id boundary on June 29.<br clear="none" />
+<br clear="none" />
+So, we are unable to process new items in Podio because of this with<br clear="none" />
+our application. Does this make sense?<br clear="none" />
+<br clear="none" />
+Thanks,<br clear="none" />
+<br clear="none" />
+-Brian J. Stinar-<br clear="none" />
+Noventum Custom Software<br clear="none" />
+?505-309-0692?<br clear="none" />
+<br clear="none" />
+On Tue, Jul 5, 2022 at 3:51 PM &#39;Citrix Support&#39; via Tech Channel<br clear="none" />
+&lt;<a href="mailto:tech@geekswhodrink.com" shape="rect" target="_blank">tech@geekswhodrink.com</a>&gt; wrote:<br clear="none" />
+&gt;<br clear="none" />
+&gt; Hello Brian,<br clear="none" />
+&gt;<br clear="none" />
+&gt; Thank you for contacting Podio support, I hope your day is treating you well!<br clear="none" />
+&gt;<br clear="none" />
+&gt; We apologize for the inconvenience you are experiencing. I will be happy to review this further for you. Please provide more details, is it giving you an error message?.<br clear="none" />
+&gt;<br clear="none" />
+&gt; Please feel free to let me know if you have any further questions, I am looking forward to hear back from you soon.<br clear="none" />
+&gt;<br clear="none" />
+&gt; Best Regards,<br clear="none" />
+&gt; Danny Arias<br clear="none" />
+&gt; Associate Technical Support Engineer<br clear="none" />
+&gt; Podio Support<br clear="none" />
+&gt; Building E21 &ndash; AFZ, Heredia, Costa Rica<br clear="none" />
+&gt; T +1 954-267-3000<br clear="none" />
+&gt; F +1 800-424-8749<br clear="none" />
+&gt; citrix<br clear="none" />
+&gt; <a href="https://www.citrix.com" shape="rect" target="_blank">www.citrix.com</a><br clear="none" />
+&gt; Citrix new brand (Laptops)<br clear="none" />
+&gt; This e-mail message and all documents that accompany it may contain privileged or confidential information, and are intended only for the use of the individual or entity to which addressed. Any unauthorized disclosure or distribution of this e-mail message is prohibited. If you have received this e-mail message in error, please notify me immediately. Thank you.<br clear="none" />
+&gt;<br clear="none" />
+&gt;<br clear="none" />
+&gt; ref:_00D306M9V._5004z1fHkuX:ref<img /><br clear="none" />
+&nbsp;</div>
+</blockquote>
+</div>
+</div>
+<img /><br clear="none" />
+&nbsp;</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<img /><br clear="none" />
+&nbsp;</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+<img src="https://citrite.my.salesforce.com/servlet/servlet.ImageServer?oid=00D300000006M9V&esid=0184z00001FeEMu&from=ext"><br><br></body>
+</html>
+------=_Part_22550_1350897771.1658928747818--

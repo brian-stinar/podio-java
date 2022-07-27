@@ -1,4 +1,10 @@
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+[We Can Setup a Contract If You Want Maintainance](https://www.noventum.us/#contact)
+
+Why I Forked
+---------------------
+
+Podio crossed the integer threshold around June 30, 2022. They don't support their Java library, and my client couldn't upgrade to this one (you should try this first): https://github.com/OvalUK/podio-java, since this guy maintained a BUNCH of stuff. However, he upgraded tons of other dependencies, so this might not work for you. If you ONLY need/want the integer-to-long conversion, try this library, since the Podio Provided one will not work, and they will be unable/unwilling to provide you with support.
+
 
 Podio Java API Client
 ---------------------
